@@ -5,6 +5,40 @@ import torch
 from torch import nn
 import random
 from math import sqrt
+import imageio as io
+
+
+'''
+A wrapper class for our dataset from ImageNet-200 (only 200,000 images), where we perform the transformations and then masking to image inputs 
+'''
+class D2VImageDataset(Dataset):
+    
+    def __init__(self, image_path: str):
+        self.image_path = image_path
+        self.PatchEmbed = PatchEmbedding()
+        self.MaskGen = MaskGenerator()
+        
+    def __getitem__(self, index):
+        '''
+        This function is needed to build a dataloader
+        - need to figure out the structure of the pathnames given by the query
+        - also need to split pathnames into train/test split s.t. path looks like: dataset/train/xxx1.png, dataset/test/yyy1.png
+        '''
+        img_path = 0 # set this to the path to the image
+        img = iio.imread(img_path) # reading the image into an array called img
+        
+        # perform patching and then build mask
+        x = self.PatchEmbed(img)
+        y = x   # this is the target (unmasked)
+        
+        # get mask
+        mask = self.MaskGen()
+        
+        x = x*mask # mask x
+        
+        # returns patched, masked x, and patched, unmasked y (this is the target)
+        return x, y
+        
 
 
 '''
@@ -13,8 +47,8 @@ Our implementation is very simple, and uses a Conv2d layer for projection (same 
 '''
 class PatchEmbedding(nn.Module):
     
-    ''' For now, PatchEmbedding only works for a specific image + patch size (image=224x224, patch=16x16)'''
     def __init__(self, img_size=224, patch_size=16, flatten=True, bias=True):
+        ''' For now, PatchEmbedding only works for a specific image + patch size (image=224x224, patch=16x16)'''
         super().__init__()
         
         # set some constants
@@ -60,8 +94,8 @@ class MaskGenerator(nn.Module):
         self.final_mask_count = (int) (self.height*self.width)*mask_ratio
         
     
-    ''' this function creates the mask as a 2d array, where 1 means the patch at i,j is masked'''
     def __call__(self):
+        ''' this function creates the mask as a 2d array, where 1 means the patch at i,j is masked'''
         
         # blank mask
         mask = torch.zeros((self.height, self.width), dtype=torch.int)
@@ -85,8 +119,9 @@ class MaskGenerator(nn.Module):
             # add block to mask
             for i in range(t, t+a):
                 for j in range(l, l+b):
-                    mask[i,j] = 1
-                    mask_count += 1
+                    if mask[i, j] == 0:
+                        mask[i,j] = 1
+                        mask_count += 1
         
         # now, we have a full mask with at least the desired ratio of patches, so we can return it
         return mask
