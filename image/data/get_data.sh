@@ -1,4 +1,5 @@
-wget http://cs231n.stanford.edu/tiny-imagenet-200.zip ./tiny-imagenet-200.zip
-unzip ./tiny-imagenet-200.zip
+wget https://s3.amazonaws.com/fast-ai-imageclas/imagenette2-160.tgz ./imagenette-160.tgz
+tar -xvzf ./imagenette-160.tgz
+rm -f ./imagenette-160.tgz
 
 

@@ -1,7 +1,7 @@
 
 # ignore all data
-image/data/tiny-imagenet-200/
-tiny-imagenet-200/
+image/data/imagenette2-160/
+imagenette2-160/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
