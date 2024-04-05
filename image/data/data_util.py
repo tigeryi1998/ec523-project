@@ -3,6 +3,7 @@ This file will contain everything for creating the correct image data as needed 
 """
 import torch
 from torch import nn
+from torch.
 import random
 from math import sqrt
 import imageio as io
