@@ -10,8 +10,3 @@ This model works as follows:
 6) We try to minimize the difference between the teacher and student model (i.e. the student "learns" from the teacher)
     1) the teacher's parameters are updated using EMA (exponential moving average)
     2) targets are built as the top k blocks of the teacher model for time-steps that are masked in student mode
-
-
-#### Embedding
-
-1) Given a 
