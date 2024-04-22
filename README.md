@@ -13,7 +13,7 @@ This project is from Rohan Kumar, Tiger Yi, Hao Chen, Shi Gu for EC523 Deep Lear
     2. Masking Generator in image/data/data_util.py
     3. Testing of both of the above systems, in the notebook called image/data/testing_data.ipynb
     4. Testing of BEiT model on some sample data, in image/data/transformers.ipynb
-3. Text (Hao Chen):
+3. Text (Hao and Shi):
     1. Dataset wrapper class, applies transforms needed in text/dataset.py
     2. Found text tokenizer (RoBERTa) in text/dataset.py
     3. Masking function of the dataset wrapper in text/dataset.py
