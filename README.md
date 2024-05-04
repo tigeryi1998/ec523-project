@@ -1,6 +1,6 @@
 # ec523-project: Re-implementing data2vec
 
-This project is from Rohan Kumar, Tiger Yi, Hao Chen, Shi Gu for EC523 Deep Learning, Spring 2024. 
+This project is from Rohan Kumar, Sicheng (Tiger) Yi, Hao Chen, Shi Gu for EC523 Deep Learning, Spring 2024. 
 
 > NOTE: the data2vec directory contains the code from the original implementation (i.e. Meta's data2vec)
 
