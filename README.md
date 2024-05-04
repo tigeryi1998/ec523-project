@@ -19,7 +19,7 @@ Before training, change the configuration in `text/configs/config.yaml`
 
 Run the following code to start training,
 ```bash
-python train.py --config text/configs/config.yaml 
+python text_train.py --config text/configs/config.yaml 
 ```
 
 For evaluating the trained model's performance on GLUE tasks, run the glue_test.py by entering the path of the model file and selecting the task you want to test.
