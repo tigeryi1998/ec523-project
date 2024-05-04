@@ -26,6 +26,7 @@ For evaluating the trained model's performance on GLUE tasks, run the glue_test.
 
 ## References
 (data2vec examples)[https://github.com/arxyzan/data2vec-pytorch]
+
 (data2vec official)[https://github.com/facebookresearch/fairseq/tree/main/examples/data2vec]
 
 
