@@ -1,3 +1,6 @@
+# Utilizing code from https://github.com/arxyzan/data2vec-pytorch/blob/main/text/dataset.py to generate the cleaned wiki103 dataset.
+
+
 import torch
 from torch.utils.data import Dataset
 from datasets import load_dataset
