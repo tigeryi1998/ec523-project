@@ -3,10 +3,10 @@ device: 'cuda'
 train:
   batch_size: 32
   eval_batch_size: 32
-  num_epochs: 20
-  checkpoints_dir: 'text/checkpoints/roberta-pretrain'
-  log_dir: 'text/logs/roberta-pretrain'
-  save_ckpt_freq: 20
+  num_epochs: 5
+  checkpoints_dir: 'text/checkpoints/trained_mode'
+  log_dir: 'text/log'
+  save_ckpt_freq: 5
 criterion:
   loss_beta: 4
 optimizer:
@@ -16,9 +16,9 @@ dataset:
   name: 'wikitext-103-v1'
   mlm_probability: 0.15
   valid_seq_lenghts: [12, 512]
-  clean_dataset: false
+  clean_dataset: true
 model:
-  average_top_k_layers: 10
+  average_top_k_layers: 8
   embed_dim: 768
   num_classes: null
   encoder_checkpoint: 'roberta-base'
