@@ -25,9 +25,9 @@ python train.py --config text/configs/config.yaml
 For evaluating the trained model's performance on GLUE tasks, run the glue_test.py by entering the path of the model file and selecting the task you want to test.
 
 ## References
-(data2vec examples)[https://github.com/arxyzan/data2vec-pytorch]
+[data2vec examples](https://github.com/arxyzan/data2vec-pytorch)
 
-(data2vec official)[https://github.com/facebookresearch/fairseq/tree/main/examples/data2vec]
+[(data2vec official](https://github.com/facebookresearch/fairseq/tree/main/examples/data2vec)
 
 
 
