@@ -1,0 +1,29 @@
+modality: 'text'
+device: 'cuda'
+train:
+  batch_size: 32
+  eval_batch_size: 32
+  num_epochs: 5
+  checkpoints_dir: 'text/checkpoints/trained_mode'
+  log_dir: 'text/log'
+  save_ckpt_freq: 5
+criterion:
+  loss_beta: 4
+optimizer:
+  lr: 0.0002
+  weight_decay: 0.01
+dataset:
+  name: 'wikitext-103-v1'
+  mlm_probability: 0.15
+  valid_seq_lenghts: [12, 512]
+  clean_dataset: true
+model:
+  average_top_k_layers: 8
+  embed_dim: 768
+  num_classes: null
+  encoder_checkpoint: 'roberta-base'
+  normalize_targets: false
+  ema_decay: 0.999
+  ema_end_decay: 0.9999
+  ema_anneal_end_step: 300000
+

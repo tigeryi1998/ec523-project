@@ -1,6 +1,5 @@
-"""
-This file will contain everything for creating the correct image data as needed for this project, including embedding and masking modules.
-"""
+# Adapting codes from https://github.com/arxyzan/data2vec-pytorch/blob/main/vision/dataset.py to get image dataset.
+
 import torch
 from torch import nn
 from torchvision.datasets.folder import ImageFolder
