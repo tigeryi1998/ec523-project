@@ -36,6 +36,14 @@ In the file, we prepared five tasks:
 
 You will need to change the selected_task variable to select task.
 
+### **Image**
+
+For pretraining, run the notebook under /image/training/pretrain.ipynb. This notebook will train the image modality data2vec model based on a base encoder image of your choice, and a dataset specified in the file.
+
+For training for image classification, run the notebook under image/training/image_train.ipynb.
+
+For evaluation on image data, run the notebook under image/training/image_evaluate.ipynb. Additional results from testing are shown in the image/training/results subdirectory.
+
 ## References
 [data2vec examples](https://github.com/arxyzan/data2vec-pytorch)
 
