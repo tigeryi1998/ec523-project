@@ -6,3 +6,5 @@ tqdm
 omegaconf
 tensorboard
 timm
+evaluate
+accelerate
