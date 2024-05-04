@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
     trainers_dict = {
         'text': TextTrainer,
-        'image': imageTrainer,
+        'image': ImageTrainer,
     }
     assert modality in trainers_dict.keys(), f'invalid modality `{cfg.modality}`, expected {list(trainers_dict.keys())}'
     trainer = trainers_dict[modality](cfg)
