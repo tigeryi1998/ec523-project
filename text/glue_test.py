@@ -21,13 +21,6 @@ def tokenize_qqp(example, tokenizer, max_length=128):
         example['question1'], example['question2'], truncation=True, padding="max_length", max_length=max_length
     )
     return inputs
-
-def tokenize_stsb(example, tokenizer, max_length=128):
-    # Tokenize both sentences as separate fields for STS-B
-    inputs = tokenizer(
-        example['sentence1'], example['sentence2'], truncation=True, padding="max_length", max_length=max_length
-    )
-    return inputs
     
 def compute_metrics(eval_pred):
     logits, labels = eval_pred
