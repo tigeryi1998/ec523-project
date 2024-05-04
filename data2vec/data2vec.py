@@ -30,14 +30,13 @@ class Data2Vec(nn.Module):
         self.ema_end_decay = self.cfg.model.ema_end_decay
         self.ema_anneal_end_step = self.cfg.model.ema_anneal_end_step
 
-        if self.modality == 'text':
-            self.regression_head = nn.Sequential(nn.Linear(self.embed_dim, self.embed_dim * 2),
+		if self.modality == 'text':
+			self.regression_head = nn.Sequential(nn.Linear(self.embed_dim, self.embed_dim * 2),
 				nn.GELU(),
-				nn.Linear(self.embed_dim * 2, self.embed_dim)
-        )
+				nn.Linear(self.embed_dim * 2, self.embed_dim))
 
-        if self.modality =='vision':
-            self.regression_head =  nn.Linear(self.embed_dim, self.embed_dim)
+		if self.modality =='vision':
+			self.regression_head =  nn.Linear(self.embed_dim, self.embed_dim)
 
     def stepEMA(self):
         '''
